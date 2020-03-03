@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<script defer type="module" src="conversor.js"></script>
+		<script type="text/javascript">
+			let binario = document.getElementById('binario');
+			binario.onChange = function () {
+				let conversor = new Conversor();
+				let base = 2;
+				let decimal = conversor.converterEmDecimal(binario, base);
+				document.getElementById('decimal').innerHTML = '' + decimal;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form>
+			<label for="binario">Digite um número binário</label>
+			<input type="text" id="binario" value="" pattern="/^[0-1]{1,8}$/" />
+			<output id="decimal"></output>
+		</form>
+	</body>
+</html>
